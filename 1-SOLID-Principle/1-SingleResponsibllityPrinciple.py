@@ -89,5 +89,4 @@ Violation:
     For e.g if we want to add new log(log in our system) then we would need to
     change send_log method because we need to add one more if/elif to encorporate 
     new log.
-    .
 """
