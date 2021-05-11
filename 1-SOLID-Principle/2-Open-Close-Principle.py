@@ -1,29 +1,31 @@
 """
 Definition:
-    A class should have just one reason to change.
-    ie. A class should have only one job.
+    All the classes should be open for extension and closed for modification.
+    We can achieve it by making base class and feature will be in the form of class.
+    make object of the new classes. No if else or switch.
 """
-import enum
+from abc import ABC, abstractmethod
 
 
-class Communication(enum.Enum):
-    email = 1
-    notication = 2
-    show = 3
+class SendLog(ABC):
+    @abstractmethod
+    def process_log(self):
+        pass
 
 
-class SendLog:
-    def __init__(self, log):
-        self.log = log
+class EmailLog(SendLog):
+    def process_log(self, log):
+        print(f"Email ", log)
 
-    def email_log(self):
-        print(f"Email ", self.log)
 
-    def notication_log(self):
-        print("Notification ", self.log)
+class NotifyLog(SendLog):
+    def process_log(self, log):
+        print(f"Notification ", log)
 
-    def print_log(self):
-        print("Print ", self.log)
+
+class PrintLog(SendLog):
+    def process_log(self, log):
+        print(f"Print ", log)
 
 
 class LogCalories:
@@ -39,21 +41,15 @@ class LogCalories:
         self.send_log(log)
 
     def send_log(self, log):
-        send_log = SendLog(log)
-        for mode in self.calory_tracker.communication_modes:
-            if mode == Communication.show:
-                send_log.print_log()
-            elif mode == Communication.email:
-                send_log.email_log()
-            elif mode == Communication.notication:
-                send_log.notication_log()
+        for logger in self.calory_tracker.loggers:
+            logger.process_log(log)
 
 
 class CaloryTracker:
-    def __init__(self, max_calories, communication_modes=(Communication.show, )):
+    def __init__(self, max_calories, loggers=tuple()):
         self.current_calories = 0
         self.max_calories = max_calories
-        self.communication_modes = communication_modes
+        self.loggers = loggers
 
     def is_calories_surplus(self):
         return self.current_calories > self.max_calories
@@ -77,16 +73,14 @@ class CaloryTracker:
 
 
 calory_tracker = CaloryTracker(
-    2500, (Communication.email, Communication.notication, Communication.show))
+    2500, (EmailLog(), NotifyLog(), PrintLog()))
 calory_tracker.add_calories(1500)
 calory_tracker.add_calories(1500)
 calory_tracker.subtract_calories(600)
 
 
 """
-Violation:
-    Current program is violeting the Open/Closed Principle. 
-    For e.g if we want to add new log(log in our system) then we would need to
-    change send_log method because we need to add one more if/elif to encorporate 
-    new log.
+1. Now if we want to add any logger then we need to make 
+that logger class and add object while creating CaloryTracker object.
+2. Hence No need to modify any other classes
 """
