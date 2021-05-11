@@ -1,7 +1,7 @@
 """
 Definition:
     All the classes should be open for extension and closed for modification.
-    We can achieve it by making base class and feature will be in the form of class.
+    We can achieve it by making interface and feature will be in the form of class.
     make object of the new classes. No if else or switch.
 """
 from abc import ABC, abstractmethod
