@@ -76,3 +76,11 @@ if __name__ == "__main__":
     else:
         raise Exception("Unknown Platform")
     dialog.render()
+
+
+"""
+Applications:
+1. Use the Fac­to­ry Method when you don’t know before­hand the exact types and depen­den­cies of the objects your code should work with.
+2. Use the Fac­to­ry Method when you want to pro­vide users of your library or frame­work with a way to extend its inter­nal components.
+3. Use the Fac­to­ry Method when you want to save sys­tem resources by reusing exist­ing objects instead of rebuild­ing them each time.
+"""
