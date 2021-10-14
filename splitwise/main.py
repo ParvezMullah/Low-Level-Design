@@ -21,4 +21,26 @@ if __name__ == '__main__':
     user3 = user_controller.add_user(3, "user3_first", "user3_last")
     user4 = user_controller.add_user(4, "user4_first", "user4_last")
 
-    group1 = user_controller.add_group(1, [user1, user2, user3, user4])
+    group1 = group_controller.add_group(1, [user1, user2, user3, user4])
+
+    bill1_contributions = {
+        user1.id: 50,
+        user2.id: 100,
+        user3.id: 100,
+        user4.id: 50,
+    }
+    bill1 = bill_controller.add_bill(
+        1, group1.id, 300, user1.id, bill1_contributions)
+    assert bill_controller.get_user_balance(user1.id) == 250
+
+    bill1_contributions = {
+        user1.id: 50,
+        user2.id: 100,
+        user3.id: 100,
+        user4.id: 50,
+    }
+    bill1 = bill_controller.add_bill(
+        2, group1.id, 300, user1.id, bill1_contributions)
+    assert bill_controller.get_user_balance(user1.id) == 500
+
+    
