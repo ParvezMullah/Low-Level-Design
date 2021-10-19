@@ -26,12 +26,14 @@ class EvictionStorageDoublyLinkedList(EvictionStorageInteface):
                 existing_node.previous.next = existing_node.next
             else:
                 self.first = self.first.next
-                self.first.previous = None
+                if self.first:
+                    self.first.previous = None
         self.add_node(key)
 
     def key_full(self):
         key_to_delete = self.first.key
         self.keys.pop(self.first.key)
         self.first = self.first.next
-        self.first.previous = None
+        if self.first:
+            self.first.previous = None
         return key_to_delete
