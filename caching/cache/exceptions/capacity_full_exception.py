@@ -1,0 +1,2 @@
+class CapacityFullException(Exception):
+    pass

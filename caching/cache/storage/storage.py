@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class CacheInterface(ABC):
+class Storage(ABC):
     @abstractmethod
     def put(self, key, value):
         pass

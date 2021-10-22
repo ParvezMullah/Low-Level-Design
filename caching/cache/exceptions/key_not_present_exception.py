@@ -1,0 +1,2 @@
+class KeyNotPresentException(Exception):
+    pass

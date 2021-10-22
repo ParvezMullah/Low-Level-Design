@@ -1,13 +1,11 @@
 from abc import ABC, abstractmethod
 
 
-class EvictionStorageInteface(ABC):
-
+class Policy(ABC):
     @abstractmethod
-    def key_accesed(self, key):
+    def access_key(self, key):
         pass
 
     @abstractmethod
-    def key_full(self):
+    def evict_key(self):
         pass
-
