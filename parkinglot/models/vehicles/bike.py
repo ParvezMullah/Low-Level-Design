@@ -1,0 +1,5 @@
+from parkinglot.models.vehicles.vehicle import Vehicle
+
+
+class Bike(Vehicle):
+    pass
