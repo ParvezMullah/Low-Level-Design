@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class ParkingSlotEnum(Enum):
+class ParkingSpotEnum(Enum):
     handicap = 0
     compact = 1
     large = 2

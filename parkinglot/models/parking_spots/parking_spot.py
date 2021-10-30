@@ -11,3 +11,6 @@ class ParkingSpot:
 
     def is_free(self):
         return self.assigned_vehicle is None
+
+    def get_spot_type(self):
+        return self.spot_type.name

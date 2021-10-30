@@ -1,0 +1,2 @@
+class SpotFullException(Exception):
+    pass
