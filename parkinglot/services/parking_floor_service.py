@@ -16,6 +16,7 @@ class ParkingFloorService:
             self.__lock.acquire()
             if self.is_free(spot_type):
                 spot = self.parking_floor.available_spots[spot_type.name].pop()
+                print(f"{spot_type.name} is booked.")
                 self.decreament_available_spot(spot_type)
             else:
                 raise spot_full_exception.SpotFullException(f'{spot_type.name} Spot is Full.')

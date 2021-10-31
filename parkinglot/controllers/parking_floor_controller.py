@@ -18,5 +18,6 @@ class ParkingFloorController:
 
     def update_display_board(self):
         available_spot_display_message = self.parking_floor_service.update_display_board()
+        print("*"*15, "available spot", "*"*15)
         print(available_spot_display_message)
-
+        print("*"*40)
