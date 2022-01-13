@@ -1,0 +1,16 @@
+1. Any library member should able to search the books by their title, author, subject, category, as well as publication date
+2. each book will have a unique identifier number and other details including rack number which will help to phyically locate the book.
+3. there could be more than one copy of the book and the library member should be able to checkout and reserve one copy. we will call each copy of the book an item.
+4. the system should able to retrieve the information like who took a particular book and what are the specific books checkout by the specific library member.
+5. there should be a maximum(5) on how many books a member can checkout.
+6. there should be a maximum limit (10) days a member can have a book.
+7. the system should collect fine for the book returned after the due date.
+8. members should able to reserve books that are not currently available.
+9. the sytem should able to trigger notification whenever the reserve book is available as well as not returned the books within the due date.
+10. each book and memeber will have a unique barcode. the system will able to read barcode from the books and member's library card.
+
+Credit : https://www.youtube.com/watch?v=71W8QTdFWw8
+
+
+    
+
