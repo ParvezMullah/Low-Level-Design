@@ -1,0 +1,2 @@
+class TimeWindowExceededException(Exception):
+    pass
