@@ -1,0 +1,2 @@
+class InValidDirectionException(Exception):
+    pass
