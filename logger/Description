@@ -1,0 +1,11 @@
+"""
+creation:
+            singleton
+            abstract factory
+
+behavioural:
+            chain of responsibility
+            observer
+
+"""
+Each level can be configured with different observers.
